@@ -1,4 +1,8 @@
 from fastapi import FastAPI
+from fastapi import FastAPI
+from app.config import Settings
+
+settings = Settings()
 
 app = FastAPI(title="Hourglass API")
 
