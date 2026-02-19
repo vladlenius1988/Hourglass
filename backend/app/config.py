@@ -1,9 +1,10 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings  
+
 
 class Settings(BaseSettings):
     APP_NAME: str = "Hourglass API"
     DEBUG: bool = True
-    DATABASE_URL: str = "postgresql://user:password@localhost:5432/hourglass"
+    DATABASE_URL: str = "postgresql+asyncpg://user:password@localhost:5432/hourglass"
 
     class Config:
         env_file = ".env" 
