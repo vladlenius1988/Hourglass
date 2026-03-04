@@ -1,29 +1,17 @@
-import React from "react";
 import type { ReactNode } from 'react';
+import Header from "./Header";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="app-container">
-      <header className="app-header">
-        <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/register">Register</a></li>
-  </ul>
-</nav>
-      </header>
-
-      <main className="app-main">
-        {children}
-      </main>
-
+      <Header />
+      <main className="app-main">{children}</main>
       <footer className="app-footer">
-        <p>&copy; 2026 Hourglass Project</p>
+        © 2026 Hourglass
       </footer>
     </div>
   );
